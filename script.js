@@ -8,7 +8,7 @@ function displayMessage(message) {
   document.querySelector('.message').textContent = message;
 }
 
-function displayScore(score) {
+function changeScore(score) {
   document.querySelector('.score').textContent = score;
 }
 
@@ -40,10 +40,10 @@ document.querySelector('.check').addEventListener('click', function () {
       );
 
       score--;
-      displayScore(score);
+      changeScore(score);
     } else {
       displayMessage('You lost the game!');
-      displayScore(0);
+      changeScore(0);
     }
   }
 });
@@ -51,7 +51,7 @@ document.querySelector('.check').addEventListener('click', function () {
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  displayScore(score);
+  changeScore(score);
   document.querySelector('.number').textContent = '?';
   displayMessage('Start guessing...');
   document.querySelector('.guess').value = '';
